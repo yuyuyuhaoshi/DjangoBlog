@@ -70,3 +70,6 @@ class Post(models.Model):
     # 因此这是一对多的关系，
     # 和 Category 类似。
     author = models.ForeignKey(User)
+
+# 完成后输入命令 python manage.py makemigrations
+# 再输入 python mange.py migrate
