@@ -1,3 +1,7 @@
-from django.shortcuts import render
+# coding:utf-8
 
-# Create your views here.
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hi,余豪士")
