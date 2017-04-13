@@ -1,6 +1,8 @@
 # coding:utf-8
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 class Category(models.Model):
     """
@@ -20,8 +22,10 @@ class Category(models.Model):
     """
     name = models.CharField(max_length=100)
 
+
 class Tag(models.Model):
     name = models.CharField(max_length=100)
+
 
 class Post(models.Model):
     # 文章标题
@@ -70,6 +74,9 @@ class Post(models.Model):
     # 因此这是一对多的关系，
     # 和 Category 类似。
     author = models.ForeignKey(User)
+
+    def __str__(self):
+        return reverse('blog:detail', kwargs={'pk': self.pk})
 
 # 完成后输入命令 python manage.py makemigrations
 # 再输入 python mange.py migrate
