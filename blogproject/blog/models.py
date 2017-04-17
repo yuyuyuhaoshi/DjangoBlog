@@ -76,7 +76,11 @@ class Post(models.Model):
     author = models.ForeignKey(User)
 
     def __str__(self):
+        return self.title
+
+    # 自定get_absolute_url方法
+    def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
 
 # 完成后输入命令 python manage.py makemigrations
-# 再输入 python mange.py migrate
+# 再输入 python manage.py migrate
