@@ -31,7 +31,7 @@ class Post(models.Model):
     # 文章标题
     title = models.CharField(max_length=100)
     # 文章内容
-    content = models.TextField(max_length=100)
+    content = models.TextField()
     # 文章创建时间
     create_time = models.DateTimeField()
     # 文章最后修改时间

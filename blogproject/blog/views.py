@@ -12,19 +12,19 @@ def index(request):
 """
 
 
-# 使用下方真正的首页视图函数
+# 首页视图函数
 
 def index(request):
     post_list = Post.objects.all()
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
-
+# 详情页视图函数
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.content = markdown.markdown(post.content,
-                                     extensions=[
-                                         'markdown.extensions.extra',
-                                         'markdown.extensions.codehilite',
-                                         'markdown.extensions.toc',
-                                     ])
+    # post.content = markdown.markdown(post.content,
+    #                                  extensions=[
+    #                                      'markdown.extensions.extra',
+    #                                      'markdown.extensions.codehilite',
+    #                                      'markdown.extensions.toc',
+    #                                  ])
     return render(request, 'blog/detail.html', context={'post': post})
