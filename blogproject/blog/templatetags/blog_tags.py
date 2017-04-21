@@ -14,16 +14,19 @@ from ..models import Post, Category
 register = template.Library()
 
 
+# 显示五篇最近的文章
 @register.simple_tag
 def get_recent_posts(num=5):
-    return Post.objects,all()[:num]
+    return Post.objects.all()[:num]
 
 
+# 归档 按插入时间降序排列
 @register.simple_tag
 def archives():
-    return Post.objects.dates('created_times', 'month', order='DESC')
+    return Post.objects.dates('created_time', 'month', order='DESC')
 
 
+# 分类
 @register.simple_tag
 def get_categories():
     return Category.objects.all()

@@ -33,7 +33,7 @@ class Post(models.Model):
     # 文章内容
     content = models.TextField()
     # 文章创建时间
-    create_time = models.DateTimeField()
+    created_time = models.DateTimeField()
     # 文章最后修改时间
     modified_time = models.DateTimeField()
     # 文章摘要，可以没有文章摘要，
