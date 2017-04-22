@@ -1,9 +1,8 @@
 # coding:utf-8
-
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from .models import Post,Category
 import markdown
+from django.shortcuts import render, get_object_or_404
+from comments.forms import CommentForm
+from .models import Post, Category
 
 """
 使用下方的模板引擎方式。
@@ -21,13 +20,21 @@ def index(request):
 # 详情页视图函数
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.content = markdown.markdown(post.content,
+    post.content = markdown.markdown(
+                                  post.content,
                                   extensions=[
-                                     'markdown.extensions.extra',
-                                     'markdown.extensions.codehilite',
-                                     'markdown.extensions.toc',
+                                      'markdown.extensions.extra',
+                                      'markdown.extensions.codehilite',
+                                      'markdown.extensions.toc',
                                   ])
-    return render(request, 'blog/detail.html', context={'post': post})
+    form = CommentForm()
+    # 获取这篇 post 下的全部评论
+    comment_list = post.comment_set.all()
+    context = {'post': post,
+               'form': form,
+               'comment_list': comment_list
+               }
+    return render(request, 'blog/detail.html', context=context)
 
 
 # 归档页（时间）

@@ -21,40 +21,49 @@
     </article>
     <section class="comment-area">
         <h2>留下你的评论</h2>
-        <form action="#" method="post" class="comment-form">
+        <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
-                    <input type="text" name="name" placeholder="名字" required>
+                    <label for="{{ form.name.id_for_label }}">Name:</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
                 </div>
                 <div class="col-md-4">
-                    <input type="email" name="email" placeholder="邮箱" required>
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="url" placeholder="网址" required>
+                    <label for="{{ form.url.id_for_label }}">URL:</label>
+                    {{ form.url }}
+                    {{ form.url.errors }}
                 </div>
                 <div class="col-md-12">
-                    <textarea name="comment" rows="7" placeholder="" required></textarea>
-                    <button class=""><span>发表</span></button>
+                    <label for="{{ form.text.id_for_label }}">Comments:</label>
+                    {{ form.text }}
+                    {{ form.text.errors }}
+                    <button type="submit"><span>发表</span></button>
                 </div>
             </div>    <!-- row -->
         </form>
         <div class="comment-list">
             <h2>评论列表</h2>
             <ul class="list-unstyled">
-                <li class="comment-item">
-                    <span class="name">追梦人物</span>
-                    <time class="date">2017年3月12日 14:56</time>
-                    <div class="text">
-                        还不错哦
-                    </div>
-                </li>
-                <li class="comment-item">
-                    <span class="name">追梦人物</span>
-                    <time class="date">2017年3月12日 14:56</time>
-                    <div class="text">
-                        还不错哦
-                    </div>
-                </li>
+                {% for comment in comment_list %}
+                    <li>
+                    <br>
+                        <span class="comment-item">{{ comment.name }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <time class="date">{{ comment.created_time }}</time>
+
+                        <div class="text">
+                            <br>
+                            {{ comment.text }}
+                        </div>
+                    </li>
+                {% empty %}
+                    暂无评论
+                {% endfor %}
             </ul>
         </div>
     </section>

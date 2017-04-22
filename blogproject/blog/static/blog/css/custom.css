@@ -807,7 +807,7 @@ figure {
 }
 
 .comment-item {
-    border-bottom: 1px #ccc solid;
+    border-bottom: 0px #ccc solid;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
