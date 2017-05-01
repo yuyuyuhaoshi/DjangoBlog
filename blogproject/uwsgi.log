@@ -1,0 +1,184 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Apr 28 00:29:53 2017] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-11) on 22 April 2017 19:14:24
+os: Linux-3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017
+nodename: VM_83_118_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/wwwroot/www.yhslib.com/blogproject
+detected binary path: /root/.pyenv/versions/3.5.2/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/wwwroot/www.yhslib.com/blogproject
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 65535
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8000 fd 3
+Python version: 3.5.2 (default, Apr 22 2017, 18:26:17)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-11)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2542fa0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291072 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x2542fa0 pid: 2596 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 2596, cores: 1)
+spawned uWSGI worker 2 (pid: 2598, cores: 1)
+spawned uWSGI worker 3 (pid: 2599, cores: 1)
+spawned uWSGI worker 4 (pid: 2600, cores: 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 4 --
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 22340 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Apr 29 20:52:11 2017] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-11) on 22 April 2017 19:14:24
+os: Linux-3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017
+nodename: VM_83_118_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/wwwroot/www.yhslib.com/blogproject
+detected binary path: /root/.pyenv/versions/3.5.2/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/wwwroot/www.yhslib.com/blogproject
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 65535
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Apr 29 20:59:39 2017] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-11) on 22 April 2017 19:14:24
+os: Linux-3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017
+nodename: VM_83_118_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/wwwroot/www.yhslib.com/blogproject
+detected binary path: /root/.pyenv/versions/3.5.2/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/wwwroot/www.yhslib.com/blogproject
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 65535
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8000 fd 3
+Python version: 3.5.2 (default, Apr 22 2017, 18:26:17)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-11)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x17fdfa0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291072 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 7 seconds on interpreter 0x17fdfa0 pid: 2597 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 2597, cores: 1)
+spawned uWSGI worker 2 (pid: 2599, cores: 1)
+spawned uWSGI worker 3 (pid: 2600, cores: 1)
+spawned uWSGI worker 4 (pid: 2601, cores: 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Apr 29 21:35:53 2017] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-11) on 22 April 2017 19:14:24
+os: Linux-3.10.0-514.10.2.el7.x86_64 #1 SMP Fri Mar 3 00:04:05 UTC 2017
+nodename: VM_83_118_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/wwwroot/www.yhslib.com/blogproject
+detected binary path: /root/.pyenv/versions/3.5.2/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/wwwroot/www.yhslib.com/blogproject
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 65535
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8000).
+bind(): Address already in use [core/socket.c line 769]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+Empty python request. skip.
+[pid: 2599|app: -1|req: -1/1]  () {0 vars in 0 bytes} [Sun Apr 30 13:26:44 2017]   => generated 0 bytes in 0 msecs ( 0) 0 headers in 0 bytes (0 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 7937 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 5 --
+-- unavailable modifier requested: 4 --
+-- unavailable modifier requested: 65 --
+-- unavailable modifier requested: 22 --
+-- unavailable modifier requested: 128 --
+invalid request block size: 21573 (max 4096)...skip
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip

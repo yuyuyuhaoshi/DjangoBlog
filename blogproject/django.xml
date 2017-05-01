@@ -1,0 +1,7 @@
+<uwsgi>
+    <socket>:8000</socket>
+    <chdir>/home/wwwroot/www.yhslib.com/blogproject</chdir>
+    <module>django_wsgi</module>
+    <processes>4</processes>
+    <daemonize>uwsgi.log</daemonize>
+</uwsgi>
