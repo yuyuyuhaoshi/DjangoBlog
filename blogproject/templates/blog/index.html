@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block main %}
+    {% if error_msg %}
+        <p>{{ error_msg }}</p>
+    {% endif %}
+
     {% for post in post_list %}
         <article class="post post-1">
             <header class="entry-header">
@@ -34,4 +38,27 @@
     {% empty %}
         <div class="no-post">暂时还没有发布的文章！</div>
     {% endfor %}
+
+    <div class="page" style="text-align: center;margin-top: 50px">
+        <ul class="pagination">
+            {% if post_list.has_previous %}
+                <li class="paginate_button previous">
+                    <a href="?page={{ post_list.previous_page_number }}">上一页</a>
+                </li>
+            {% endif %}
+
+            <li class="paginate_button disabled">
+                <a href="#">第 {{ post_list.number }} 页 / 共 {{ post_list.paginator.num_pages }} 页</a>
+            </li>
+            {% if post_list.has_next %}
+                <li class="paginate_button next">
+                    <a >下一页</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+
+
+
 {% endblock main %}

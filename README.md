@@ -1,1 +1,1 @@
-# DjangoBlog
+# [My blog](http://yhslib.com)

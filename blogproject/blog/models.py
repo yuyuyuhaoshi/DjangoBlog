@@ -81,12 +81,23 @@ class Post(models.Model):
     # 和 Category 类似。
     author = models.ForeignKey(User)
 
+    # 阅读数量
+    views_num = models.PositiveIntegerField(default=0)
+
     def __str__(self):
         return self.title
 
     # 自定get_absolute_url方法
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+
+    def increase_views_num(self):
+        self.views_num += 1
+        self.save(update_fields=['views_num'])
+
+    # def save(self, *args, **kwargs):
+    #     self.excerpt = self.content[:45]
+    #     super(Post, self).save(*args, **kwargs)
 
 # 完成后输入命令 python manage.py makemigrations
 # 再输入 python manage.py migrate

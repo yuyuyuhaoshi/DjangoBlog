@@ -12,14 +12,15 @@
                     </a>
                 </span>
                 <span class="post-author"><a href="#">{{ post.author }} </a></span>
-                <span class="comments-link"><a href="#">4 Comments</a></span>
+                <span class="post-author"><a href="#">{{ post.views_num }} Reads</a></span>
+                <!--<span class="comments-link"><a href="#">4 Comments</a></span>-->
             </div>
         </header>
         <div class="entry-content clearfix">
             {{ post.content|safe }}
         </div>
     </article>
-    <section class="comment-area">
+    <!--<section class="comment-area">
         <h2>留下你的评论</h2>
         <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
             {% csrf_token %}
@@ -45,7 +46,7 @@
                     {{ form.text.errors }}
                     <button type="submit"><span>发表</span></button>
                 </div>
-            </div>    <!-- row -->
+            </div> 
         </form>
         <div class="comment-list">
             <h2>评论列表</h2>
@@ -66,11 +67,51 @@
                 {% endfor %}
             </ul>
         </div>
-    </section>
+    </section>-->
     <section class="comment-area">
-        <!-- UY BEGIN -->
-        <div id="uyan_frame"></div>
-        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131663"></script>
-        <!-- UY END -->
+        <!--PC和WAP自适应版-->
+        <div id="SOHUCS" ></div>
+        <script type="text/javascript">
+            (function(){
+                var appid = 'cysYJeFaP';
+                var conf = 'prod_2a373ac9a86beb2a3b2fb1b7f05ff6c4';
+                var width = window.innerWidth || document.documentElement.clientWidth;
+                if (width < 960) {
+                    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+                } else {
+                    var loadJs = function (d, a) {
+                        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                        var b = document.createElement("script");
+                        b.setAttribute("type", "text/javascript");
+                        b.setAttribute("charset", "UTF-8");
+                        b.setAttribute("src", d);
+                        if (typeof a === "function") {
+                            if (window.attachEvent) {
+                                b.onreadystatechange = function () {
+                                    var e = b.readyState;
+                                    if (e === "loaded" || e === "complete") {
+                                        b.onreadystatechange = null;
+                                        a()
+                                    }
+                                }
+                            } else {
+                                b.onload = a
+                            }
+                        }
+                        c.appendChild(b)
+                    };
+                    loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+                        window.changyan.api.config({appid: appid, conf: conf})
+                    });
+                }
+            })(); </script>
+
     </section>
 {% endblock main %}
+</aside>
+{% block toc %}
+  <div class="widget widget-content">
+      <h3 class="widget-title">Article directory</h3>
+      {{ toc|safe }}
+  </div>
+{% endblock toc %}
