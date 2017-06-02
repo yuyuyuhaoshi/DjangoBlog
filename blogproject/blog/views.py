@@ -77,6 +77,7 @@ def search(request):
     return render(request, 'blog/index.html', {'error_msg': error_msg,
                                                'post_list': post_list})
 
+
 # 归档页（时间）
 def archives(request, year, month):
     post_list = Post.objects.filter(created_time__year=year, created_time__month=month)
