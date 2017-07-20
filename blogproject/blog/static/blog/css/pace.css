@@ -16,3 +16,9 @@
     text-align: center;
     margin-top: 50px;
 }
+.post .entry-content img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+
+}
