@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <article class="post post-1">
+    <article class="post post-{{ post.pk }}">
         <header class="entry-header">
             <h1 class="entry-title">{{ post.title }}</h1>
             <div class="entry-meta">
@@ -112,6 +112,6 @@
 {% block toc %}
   <div class="widget widget-content">
       <h3 class="widget-title">Article directory</h3>
-      {{ toc|safe }}
+      {{ post.toc|safe }}
   </div>
 {% endblock toc %}

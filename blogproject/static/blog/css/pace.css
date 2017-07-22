@@ -12,12 +12,8 @@
   display: none;
 }
 
-.page{
-    text-align: center;
-    margin-top: 50px;
-}
-.post .entry-content img{
-    display: block;
-    height: auto;
-    max-width: 100%;
+.post img{
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
