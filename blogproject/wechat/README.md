@@ -213,4 +213,4 @@ reply_content = {
 
 &emsp;&emsp;主要是参考了[自强学堂](http://code.ziqiangxuetang.com/django/python-django-weixin.html)和知乎用户[Echo的专栏](https://zhuanlan.zhihu.com/Ehco-python)。他的微信公众号是'翻山越岭breakwall'。
 
-&emsp;&emsp;图片加载不正常可以查看我的博客。
+&emsp;&emsp;图片加载不正常可以查看[我的博客](http://yhslib.com/post/16/)。
