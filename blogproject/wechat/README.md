@@ -177,6 +177,7 @@ reply_content = {
 我们用render_to_string()函数渲染模板信息，并将数据返回给微信。
 
 最后的代码就是这样：
+
 ```python
     if request.method == 'POST':
         data = smart_str(request.body)
@@ -205,8 +206,10 @@ reply_content = {
 ```
 ### 大功告成！
 提交给我们的服务器，就可以测试啦！  
+
 ![](http://oqcvxfytp.bkt.clouddn.com/17-9-8/39394590.jpg)
 
 # END
 写的有一点乱，参考了很多教程，失败了很多次，最主要的原因在token后多加了一个空格。所以这边要注意一下。
+
 主要是参考了[自强学堂](http://code.ziqiangxuetang.com/django/python-django-weixin.html)和知乎用户[Echo的专栏](https://zhuanlan.zhihu.com/Ehco-python)。他的微信公众号是'翻山越岭breakwall'。
