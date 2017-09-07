@@ -25,7 +25,7 @@ SECRET_KEY = '7)et-mmqdu-anwf=pp1xy^490dhi9y11p=iyr^#1@ys5p$58t4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.yhslib.com', '182.254.247.192']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.yhslib.com']
 
 
 # Application definition
