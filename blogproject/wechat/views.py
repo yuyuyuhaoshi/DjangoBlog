@@ -47,7 +47,7 @@ def wechat(request):
         else:
             return HttpResponse('weixin_index')
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         data = smart_str(request.body)
         xml = etree.fromstring(data)
         # 在控制台输出一下挑调试信息
