@@ -10,7 +10,7 @@ from lxml import etree
 
 # Create your views here.
 
-TOKEN = 'yuhaoshi'
+TOKEN = '*******'
 
 
 def index1(request):
@@ -23,38 +23,35 @@ def index2(request):
 
 @csrf_exempt
 def wechat(request):
-    # return HttpResponse('wx_index')
     if request.method == 'GET':
+        # 获得参数signature nonce token timestamp echostr
         signature = request.GET.get('signature', '')
         timestamp = request.GET.get('timestamp', '')
         nonce = request.GET.get('nonce', '')
         echostr = request.GET.get('echostr', '')
         token = TOKEN
 
-        # 按照微信的验证要求将token、timestamp、nonce字段进行字典顺序排序
-        # 将三个参数字符串拼接成一个字符串进行sha1加密
-        # 获得加密后的字符串可与signature对比，标识该请求来源于微信
+        # 将token、timestamp、nonce字段进行字典顺序排序
+        # 然后拼接成一个字符串进行sha1加密
+        # 加密后的字符串和signature进行比较，相同则返回echostr。
         tmp_list = [token, timestamp, nonce]
         tmp_list.sort()
-        # sha = hashlib.sha1()
-        # hashstr = sha.update("".join(tmp_list)).hexdigest()
+
         hashstr = "%s%s%s" % tuple(tmp_list)
         hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()
-        # hashstr = ''.join([s for s in tmp_list])
-        #
-        # # 通过python标准库中的sha1加密算法，处理上面的字符串，形成新的字符串。
-        # hashstr = hashlib.sha1(hashstr).hexdigest()
 
+        # sha = hashlib.sha1()
+        # hashstr = sha.update("".join(tmp_list)).hexdigest()
         if hashstr == signature:
             return HttpResponse(echostr)
         else:
-            return HttpResponse('wx_index1')
+            return HttpResponse('weixin_index')
 
-    if request.method == 'POST':
+    elif request.method == 'POST':
         data = smart_str(request.body)
         xml = etree.fromstring(data)
         # 在控制台输出一下挑调试信息
-        # print('**********收到的XML***********')
+        # print('收到的XML数据')
         # print(data)
 
         ToUserName = xml.find('ToUserName').text
@@ -63,7 +60,6 @@ def wechat(request):
         MsgType = xml.find('MsgType').text
         Content = xml.find('Content').text
         MsgId = xml.find('MsgId').text
-        # Content= "nihao"
 
 
         time_stamp = str(int(time.time()))
@@ -73,22 +69,6 @@ def wechat(request):
             'time': time_stamp,
             'Content': Content,
         }
-        xml = """
-            <xml>
-                <ToUserName>
-                    <![CDATA[{{ ToUserName }}]]>
-                </ToUserName>
-                <FromUserName>
-                    <![CDATA[{{ FromUserName }}]]>
-                </FromUserName>
-                <CreateTime>{{ time }}</CreateTime>
-                <MsgType>
-                    <![CDATA[text]]>
-                </MsgType>
-                <Content>
-                    <![CDATA[{{ Content }}]]>
-                </Content>
-            </xml>"""
 
         response_xml = render_to_string('wechat/wechat_reply.xml', context=reply_content)
         return HttpResponse(response_xml)
